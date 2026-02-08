@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cravt AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-robot"></i> Cravt AI</h2>
+                <button class="new-chat-btn" onclick="aiChat.newChat()">
+                    <i class="fas fa-plus"></i> Новый
+                </button>
+            </div>
+            <div class="chats-list" id="chatsList"></div>
+        </div>
+
+        <div class="main-chat">
+            <div class="chat-header">
+                <div>
+                    <span id="chatTitle">Новый чат</span>
+                    <span id="chatDate"></span>
+                </div>
+                <div>
+                    <button onclick="aiChat.toggleSidebar()" title="Меню"><i class="fas fa-bars"></i></button>
+                    <button onclick="aiChat.deleteCurrentChat()" title="Удалить"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+
+            <div class="messages" id="messages"></div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <input id="messageInput" placeholder="Enter..." maxlength="2000">
+                    <button id="sendBtn" onclick="aiChat.sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-actions">
+                    <button onclick="aiChat.copyLast()" title="Copy"><i class="fas fa-copy"></i></button>
+                    <button onclick="aiChat.exportChat()" title="Export"><i class="fas fa-download"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
